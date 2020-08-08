@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <windows.h>
 
-//
-
 template<typename T, unsigned long long S> 
 struct FxdArr
 {
