@@ -2,6 +2,19 @@
 #include <iostream>
 namespace t
 {
+	enum struct COLORS
+	{
+		BLACK,
+		BLUE,
+		GREEN,
+		CYAN,
+		RED,
+		PURPLE,
+		YELLOW,
+		WHITE,
+		GREY
+	};
+
 	void Complete();
 	void Complete(unsigned int newLines);
 	void Complete(bool io);
@@ -29,7 +42,10 @@ namespace t
 	}
 
 
-	void printNote(const char* note);
-	void printWarning(const char* warning);
-	void printError(const char* error);
+	void printNote(std::string note);
+	void printWarning(std::string warning);
+	void printError(std::string error);
+	void printColor(COLORS color, std::string word);
+	void printColor(COLORS color, std::string preLim, std::string word);
+	void printColor(COLORS color, std::string preLim, std::string word, std::string post);
 }

@@ -1,5 +1,6 @@
 #include "tLib.h"
 
+#include <string>
 #include <conio.h>
 #include <windows.h>
 
@@ -9,19 +10,6 @@ enum cinStates
 	END,
 	FAIL,
 	BAD = 4
-};
-
-enum COLORS
-{
-	BLACK,
-	BLUE,
-	GREEN,
-	CYAN,
-	RED,
-	PURPLE,
-	YELLOW,
-	WHITE,
-	GREY
 };
 
 namespace t
@@ -121,41 +109,60 @@ namespace t
 
 	// Prints low priority exception msg to console
 
-	void printNote(const char* note)
+	void printNote(std::string note)
 	{
-		HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
-		CONSOLE_SCREEN_BUFFER_INFO csbi;
-		GetConsoleScreenBufferInfo(hstdout, &csbi);
-
-		SetConsoleTextAttribute(hstdout, GREY);
-		std::cout << "[NOTE]: " << note << '\n';
-		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
+		printColor(COLORS::GREY, "[NOTE]: " + note);
 	}
 
 	// Prints priority exception msg to console
 
-	void printWarning(const char* warning)
+	void printWarning(std::string warning)
 	{
-		HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
-		CONSOLE_SCREEN_BUFFER_INFO csbi;
-		GetConsoleScreenBufferInfo(hstdout, &csbi);
-
-		SetConsoleTextAttribute(hstdout, YELLOW);
-		std::cout << "[WARNING]: " << warning << '\n';
-		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
+		printColor(COLORS::YELLOW, "[WARNING]: " + warning);
 	}
 
 	// Prints high priority exception msg to console
 
-	void printError(const char* error)
+	void printError(std::string error)
+	{
+		printColor(COLORS::RED, "[ERROR]: " + error);
+	}
+
+	void printColor(COLORS color, std::string word)
 	{
 		HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
 		CONSOLE_SCREEN_BUFFER_INFO csbi;
 		GetConsoleScreenBufferInfo(hstdout, &csbi);
 
-		SetConsoleTextAttribute(hstdout, RED);
-		std::cout << "[ERROR]: " << error << '\n';
+		SetConsoleTextAttribute(hstdout, (WORD)color);
+		std::cout << word;
 		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
+		std::cout << '\n';
 	}
 
+	void printColor(COLORS color, std::string preLim, std::string word)
+	{
+		HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
+		CONSOLE_SCREEN_BUFFER_INFO csbi;
+		GetConsoleScreenBufferInfo(hstdout, &csbi);
+
+		std::cout << preLim;
+		SetConsoleTextAttribute(hstdout, (WORD)color);
+		std::cout << word;
+		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
+		std::cout << '\n';
+	}
+
+	void printColor(COLORS color, std::string preLim, std::string word, std::string post)
+	{
+		HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
+		CONSOLE_SCREEN_BUFFER_INFO csbi;
+		GetConsoleScreenBufferInfo(hstdout, &csbi);
+
+		std::cout << preLim;
+		SetConsoleTextAttribute(hstdout, (WORD)color);
+		std::cout << word;
+		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
+		std::cout << post << '\n';
+	}
 }
