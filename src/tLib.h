@@ -48,4 +48,6 @@ namespace t
 	void printColor(COLORS color, std::string word);
 	void printColor(COLORS color, std::string preLim, std::string word);
 	void printColor(COLORS color, std::string preLim, std::string word, std::string post);
+
+	unsigned long long expon(unsigned int x, unsigned int y);
 }

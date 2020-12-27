@@ -147,11 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Matrix.cpp" />
+    <ClCompile Include="src\Rational.cpp" />
     <ClCompile Include="src\tLib.cpp" />
+    <ClCompile Include="src\SupaLongLong.cpp" />
+    <ClCompile Include="src\Variable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Matrix.h" />
     <ClInclude Include="src\FxdArr.h" />
+    <ClInclude Include="src\Rational.h" />
     <ClInclude Include="src\tLib.h" />
+    <ClInclude Include="src\SupaLongLong.h" />
+    <ClInclude Include="src\Variable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

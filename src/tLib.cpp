@@ -165,4 +165,15 @@ namespace t
 		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
 		std::cout << post << '\n';
 	}
+
+	unsigned long long expon(unsigned int x, unsigned int y)
+	{
+		unsigned long long answer = 1;
+		while (y != 0)
+		{
+			answer *= x;
+			y--;
+		}
+		return answer;
+	}
 }
