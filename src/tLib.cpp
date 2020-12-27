@@ -107,6 +107,8 @@ namespace t
 		std::cout << "[double]--------------8 bytes,    1.7E+/-308 (approx)\n";
 	}
 
+	// Color functions are windows specific!!!
+
 	// Prints low priority exception msg to console
 
 	void printNote(std::string note)
@@ -128,6 +130,8 @@ namespace t
 		printColor(COLORS::RED, "[ERROR]: " + error);
 	}
 
+	// Allows easy printing of differnt colored words to the console
+
 	void printColor(COLORS color, std::string word)
 	{
 		HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -139,6 +143,8 @@ namespace t
 		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
 		std::cout << '\n';
 	}
+
+	// [Overload] for printing a preliminary non-colored string
 
 	void printColor(COLORS color, std::string preLim, std::string word)
 	{
@@ -152,6 +158,8 @@ namespace t
 		SetConsoleTextAttribute(hstdout, csbi.wAttributes);
 		std::cout << '\n';
 	}
+
+	// [Overload] for printing a post and preliminary non-colored string 
 
 	void printColor(COLORS color, std::string preLim, std::string word, std::string post)
 	{

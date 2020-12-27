@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+// NON-FUNCTIONAL
+
 class Matrix
 {
 public:

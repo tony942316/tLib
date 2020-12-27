@@ -32,19 +32,19 @@ Rational Variable::getPower()
 	return power;
 }
 
-std::ostream& operator<<(std::ostream& os, Variable v)
-{
-	if (v.getCoef() != 1)
-	{
-		os << v.getCoef();
-	}
-
-	os << v.getVar();
-
-	if (v.getPower() != 1)
-	{
-		os << "^(" << v.getPower() << ")";
-	}
-	os << v.getCoef() << v.getVar() << "^(" << v.getPower() << ")";
-	return os;
-}
+//std::ostream& operator<<(std::ostream& os, Variable v)
+//{
+//	if (v.getCoef() != 1)
+//	{
+//		os << v.getCoef();
+//	}
+//
+//	os << v.getVar();
+//
+//	if (v.getPower() != 1)
+//	{
+//		os << "^(" << v.getPower() << ")";
+//	}
+//	os << v.getCoef() << v.getVar() << "^(" << v.getPower() << ")";
+//	return os;
+//}

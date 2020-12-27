@@ -17,7 +17,7 @@ Rational::Rational(int numer)
 
 Rational Rational::operator+(Rational r)
 {
-	if (denom = r.getDenom())
+	if (denom == r.getDenom())
 	{
 		Rational num = Rational(numer + r.getNumer(), denom);
 		simplify(num);
@@ -33,7 +33,7 @@ Rational Rational::operator+(Rational r)
 
 void Rational::operator+=(Rational r)
 {
-	if (denom = r.getDenom())
+	if (denom == r.getDenom())
 	{
 		numer += r.getNumer();
 		simplify();
@@ -48,7 +48,7 @@ void Rational::operator+=(Rational r)
 
 Rational Rational::operator-(Rational r)
 {
-	if (denom = r.getDenom())
+	if (denom == r.getDenom())
 	{
 		Rational num = Rational(numer - r.getNumer(), denom);
 		simplify(num);
@@ -64,7 +64,7 @@ Rational Rational::operator-(Rational r)
 
 void Rational::operator-=(Rational r)
 {
-	if (denom = r.getDenom())
+	if (denom == r.getDenom())
 	{
 		numer -= r.getNumer();
 		simplify();
@@ -162,6 +162,8 @@ int Rational::getDenom()
 {
 	return denom;
 }
+
+// WIP FORCED SOLUTION
 
 void Rational::simplify()
 {

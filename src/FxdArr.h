@@ -5,6 +5,8 @@
 #include <type_traits>
 #include <windows.h>
 
+// Templated class to emulate std::array functionality for practice! NOT INTENDED TO BE USE BUT FUNCTIONAL NONE THE LESS
+
 template<typename T, unsigned long long S> 
 struct FxdArr
 {

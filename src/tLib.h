@@ -1,5 +1,9 @@
 #pragma once
 #include <iostream>
+
+// Library of function for my personal use
+
+// t for tony :D
 namespace t
 {
 	enum struct COLORS
@@ -14,6 +18,8 @@ namespace t
 		WHITE,
 		GREY
 	};
+
+	// Declarations
 
 	void Complete();
 	void Complete(unsigned int newLines);

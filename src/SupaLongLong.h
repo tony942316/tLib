@@ -4,6 +4,8 @@
 
 #include "tLib.h"
 
+// Will be 128 bit integer one day, one of those "Yeah I can do that iN No TiMe!" moments
+
 class SupaLongLong
 {
 public:
